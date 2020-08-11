@@ -50,9 +50,14 @@ class Form extends Component {
         })
         .catch(console.log);
 
-      for (let value of Object.values(this.state.deliverer)) {
-        console.log(value);
-      }
+      document.getElementById("demo").innerHTML =
+        "El domiciliario con identificador : " +
+        this.state.deliverer["identifier"] +
+        " que se encuentra en la posición (" +
+        this.state.deliverer["x_deliverer"] +
+        "," +
+        this.state.deliverer["y_deliverer"] +
+        ") recogerá tu pedido";
     } catch (e) {
       console.log(e);
     }
@@ -80,6 +85,7 @@ class Form extends Component {
         <button type="button" onClick={() => this.handleSubmit()}>
           Buscar
         </button>
+        <p id="demo"></p>
       </form>
     );
   }

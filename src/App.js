@@ -31,14 +31,6 @@ class App extends Component {
           <h1>Deliverer List</h1>
         </center>
         <canvas ref="canvas" id="plane" width={640} height={425} />
-        {this.state.deliverer.map((delivererT) => (
-          <div>
-            <div>
-              <p ref="x">{delivererT.x_deliverer}</p>
-              <p ref="y">{delivererT.y_deliverer}</p>
-            </div>
-          </div>
-        ))}
       </div>
     );
   }
