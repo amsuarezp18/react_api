@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Form from "./components/Form";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    deliverer: [],
+  };
+
+  componentDidMount() {
+    fetch("http://localhost:8000/deliveries/list")
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ deliverer: data });
+      })
+      .catch(console.log);
+
+    const canvas = this.refs.canvas;
+
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#000000"; // Red color
+    ctx.beginPath();
+    ctx.arc(10, 30, 4, 0, Math.PI * 2, true);
+    ctx.fill();
+  }
+
+  render() {
+    return (
+      <div>
+        <Form></Form>
+        <center>
+          <h1>Deliverer List</h1>
+        </center>
+        <canvas ref="canvas" id="plane" width={640} height={425} />
+        {this.state.deliverer.map((delivererT) => (
+          <div>
+            <div>
+              <p ref="x">{delivererT.x_deliverer}</p>
+              <p ref="y">{delivererT.y_deliverer}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
-
 export default App;
