@@ -85,7 +85,7 @@ class Form extends Component {
         <button type="button" onClick={() => this.handleSubmit()}>
           Buscar
         </button>
-        <p id="demo"></p>
+        <p id="demo" class="transbox"></p>
       </form>
     );
   }
