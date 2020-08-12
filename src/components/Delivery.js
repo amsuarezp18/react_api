@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Deliverer from "./deliverer";
 
 class Delivery extends Component {
   state = {
