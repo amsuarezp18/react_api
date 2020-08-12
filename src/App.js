@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Form from "./components/Form";
+import Delivery from "./components/Delivery";
 import Deliverer from "./components/deliverer";
 
 class App extends Component {
@@ -54,14 +55,7 @@ class App extends Component {
           <h1>Deliverer List</h1>
         </center>
         <canvas ref="canvas" id="plane" width={610} height={610} />
-        {this.state.deliverer.map((delivererT) => (
-          <div>
-            <div>
-              <p>{delivererT.x_deliverer}</p>
-              <p>{delivererT.y_deliverer}</p>
-            </div>
-          </div>
-        ))}
+        <Delivery></Delivery>
       </div>
     );
   }
