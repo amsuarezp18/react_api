@@ -84,13 +84,21 @@ class Form extends Component {
               onChange={this.handleComponentYChange}
             />
           </div>
-          <div>
-            <button
-              class="box"
-              type="button"
-              onClick={() => this.handleSubmit()}
-            >
-              Buscar
+        </div>
+        <div>
+          <div class="wrapper">
+            <div></div>
+            <div>
+              <button
+                class="box"
+                type="button"
+                onClick={() => this.handleSubmit()}
+              >
+                Encontrar domiciliario
+              </button>
+            </div>
+            <button class="box" type="button">
+              Actualizar ubicaciones
             </button>
           </div>
         </div>
