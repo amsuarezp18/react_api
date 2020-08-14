@@ -17,16 +17,25 @@ class Delivery extends Component {
     return (
       <div>
         <center>
-          <h1>List de entregas</h1>
-        </center>
-        {this.state.delivery.map((delivererT) => (
-          <div>
-            <div>
-              <p>{delivererT.x_delivery}</p>
-              <p>{delivererT.y_delivery}</p>
+          <h1>Entregas</h1>
+          {this.state.delivery.map((delivererT) => (
+            <div class="card">
+              <div class="additional">
+                <div class="user-card">
+                  <p class="text">ID Domiciliario</p>
+                  <p class="number">{delivererT.deliverer - 100}</p>
+                </div>
+              </div>
+              <div class="general">
+                <p class="text">
+                  <strong>Punto destino</strong>
+                </p>
+                <p>Coordenada x: {delivererT.x_delivery}</p>
+                <p> Coordenada y: {delivererT.y_delivery}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </center>
       </div>
     );
   }

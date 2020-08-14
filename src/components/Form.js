@@ -66,26 +66,35 @@ class Form extends Component {
   render() {
     return (
       <form>
-        <div>
-          <label>Coordenada x: </label>
-          <input
-            type="text"
-            value={this.state.coordx}
-            onChange={this.handleComponentXChange}
-          />
+        <div class="wrapper">
+          <div></div>
+          <div>
+            <label class="text">Coordenada x: </label>
+            <input
+              type="text"
+              value={this.state.coordx}
+              onChange={this.handleComponentXChange}
+            />
+          </div>
+          <div>
+            <label class="text">Coordenada y: </label>
+            <input
+              type="text"
+              value={this.state.coordy}
+              onChange={this.handleComponentYChange}
+            />
+          </div>
+          <div>
+            <button
+              class="box"
+              type="button"
+              onClick={() => this.handleSubmit()}
+            >
+              Buscar
+            </button>
+          </div>
         </div>
-        <div>
-          <label>Coordenada y: </label>
-          <input
-            type="text"
-            value={this.state.coordy}
-            onChange={this.handleComponentYChange}
-          />
-        </div>
-        <button type="button" onClick={() => this.handleSubmit()}>
-          Buscar
-        </button>
-        <p id="demo"></p>
+        <p class="show" id="demo"></p>
       </form>
     );
   }

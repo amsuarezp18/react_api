@@ -7,11 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 #plane {
   width: 50%;
   margin: 0 auto;
@@ -19,23 +14,96 @@ code {
   border-style: groove;
 }
 
-.dot {
-  height: 15px;
-  width: 15px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-div.transbox {
-  margin: 30px;
+.card {
+  width: 580px;
+  height: 150px;
   background-color: #ffffff;
-  border: 1px solid black;
-  opacity: 0.6;
+  background: linear-gradient(#ffffff, #ffffff);
+  box-shadow: 0 4px 16px 3px rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem;
 }
 
-div.transbox p {
-  margin: 5%;
+.card .additional {
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(#eeeeee, #eeeeee);
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
+}
+
+body {
+  margin: 40px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+.card .additional .user-card {
+  width: 150px;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+.card .additional .user-card .level {
+  top: 15%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1em;
   font-weight: bold;
-  color: #000000;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 0.125rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0px;
+  margin: 4px 2px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.box {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: px 2px;
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.text {
+  font-size: 19px;
+}
+.show {
+  font-size: 20px;
+  text-align: center;
+}
+
+.card .general {
+  width: 400px;
+  height: 100%;
+  position: absolute;
+  left: 85px;
+  box-sizing: border-box;
+}
+
+.number {
+  margin-top: 2px;
+  font-size: 60px;
 }

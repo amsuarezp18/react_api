@@ -34,24 +34,19 @@ class Deliverer extends Component {
           ctx.fillText(
             obj.identifier,
             obj.x_deliverer * 6 + 4,
-            obj.y_deliverer * 6
+            obj.y_deliverer * 6 + 1
           );
 
           console.log(obj.identifier);
         }
       })
       .catch(console.log);
-
-    console.log("----------------------------------");
   }
 
   render() {
     return (
       <div>
         <Form></Form>
-        <center>
-          <h1>Deliverer List</h1>
-        </center>
         <canvas ref="canvas" id="plane" width={610} height={610} />
       </div>
     );
