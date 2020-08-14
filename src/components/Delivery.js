@@ -23,7 +23,7 @@ class Delivery extends Component {
               <div class="additional">
                 <div class="user-card">
                   <p class="text">ID Domiciliario</p>
-                  <p class="number">{delivererT.deliverer - 100}</p>
+                  <p class="number">{delivererT.deliverer}</p>
                 </div>
               </div>
               <div class="general">
